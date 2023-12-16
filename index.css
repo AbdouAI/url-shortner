@@ -525,10 +525,21 @@ a.pill:active{
     gap: 1.5rem;
 }
 #lastCallAction h1{
+    position: relative;
+    top: 5rem;
+    opacity: 0;
     font-size: var(--fnt-size-2);
     font-weight: var(--fnt-weight-1);
     color: var(--secondary-light-text-color);
     text-align: center;
+    transition: top .5s ease,opacity .5s ease;
+}
+#lastCallAction .ca-btn{
+    position: relative;
+    top: 5rem;
+    opacity: 0;
+    transition: top .5s ease,opacity .5s ease;
+    transition-delay: .2s;
 }
 footer{
     background-color: var(--footer-bg-color);

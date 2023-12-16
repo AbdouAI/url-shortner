@@ -8,6 +8,10 @@ let titleEls=document.querySelectorAll(".title>*")
 let cards=document.querySelectorAll(".card")
 let line=document.querySelector(".line")
 
+let lastCaH1=document.querySelector("#lastCallAction h1")
+let lastCaBtn=document.querySelector("#lastCallAction a")
+
+
 
 const observerHero= new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
@@ -53,6 +57,15 @@ const observerStatsSmall= new IntersectionObserver((entries)=>{
     })
 })
 
+const observerLastCa= new IntersectionObserver((entries)=>{
+    entries.forEach((entry)=>{
+        if(entry.isIntersecting){
+            lastCaH1.classList.add("animate-hero-text")
+            lastCaBtn.classList.add("animate-hero-text")
+        }
+    })
+})
+
 observerHero.observe(document.getElementById("hero"))
 observerTitle.observe(document.querySelector(".title p"))
 observerLinkShortner.observe(document.getElementById("linkShortner"))
@@ -60,6 +73,8 @@ observerStatsWide.observe(line)
 observerStatsSmall.observe(cards.item(0))
 observerStatsSmall.observe(cards.item(1))
 observerStatsSmall.observe(cards.item(2))
+observerLastCa.observe(lastCaH1)
+
 
 
 
